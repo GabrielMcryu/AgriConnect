@@ -19,6 +19,12 @@ namespace agri_connect_backend.Repository
             return Save();
         }
 
+        public bool DeleteSupplierProduct(SupplierProduct supplierProduct)
+        {
+            _context.Remove(supplierProduct);
+            return Save();
+        }
+
         public SupplierProduct GetSupplierProduct(int id)
         {
             return _context.SupplierProducts.Where(sp => sp.Id == id).FirstOrDefault();
@@ -38,6 +44,12 @@ namespace agri_connect_backend.Repository
         public bool SupplierProductExists(int id)
         {
             return _context.SupplierProducts.Any(sp => sp.Id == id);   
+        }
+
+        public bool UpdateSupplierProduct(SupplierProduct supplierProduct)
+        {
+            _context.Update(supplierProduct);
+            return Save();
         }
     }
 }
