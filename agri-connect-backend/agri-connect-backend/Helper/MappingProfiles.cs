@@ -12,6 +12,10 @@ namespace agri_connect_backend.Helper
             CreateMap<SupplierProductDto, SupplierProduct>();
             CreateMap<SupplierTransaction, SupplierTransactionDto>();
             CreateMap<SupplierTransactionDto, SupplierTransaction>();
+            CreateMap<VendorProduct,  VendorProductDto>();
+            CreateMap<VendorProductDto, VendorProduct>();
+            CreateMap<VendorTransaction, VendorTransactionDto>();
+            CreateMap<VendorTransactionDto, VendorTransaction>();
         }
     }
 }
