@@ -12,5 +12,7 @@ namespace agri_connect_backend.Data
 
         public DbSet<SupplierProduct> SupplierProducts { get; set; }
         public DbSet<SupplierTransaction> SupplierTransactions { get; set; }
+        public DbSet<VendorProduct> VendorProducts { get; set; }
+        public DbSet<VendorTransaction> VendorTransactions { get; set; }
     }
 }
