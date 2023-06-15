@@ -15,7 +15,6 @@ namespace agri_connect_backend.Repository
 
         public bool CreateSupplierTransaction(SupplierTransaction supplierTransaction)
         {
-            Console.WriteLine(supplierTransaction);
             _context.Add(supplierTransaction);
             return Save();
         }
