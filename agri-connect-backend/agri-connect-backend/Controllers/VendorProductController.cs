@@ -78,5 +78,54 @@ namespace agri_connect_backend.Controllers
 
             return Ok("Successfully created");
         }
+
+        [HttpPut("{vendorProductId}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public IActionResult UpdateVendorProduct(int vendorProductId, [FromBody] VendorProductDto updatedVendorProduct)
+        {
+            if (updatedVendorProduct == null)
+                return BadRequest(ModelState);
+
+            if (vendorProductId != updatedVendorProduct.Id)
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var vendorProductMap = _mapper.Map<VendorProduct>(updatedVendorProduct);
+
+            if(!_vendorProductRepository.UpdateVendorProduct(vendorProductMap))
+            {
+                ModelState.AddModelError("", "Something went wrong updating product");
+                return StatusCode(500, ModelState);
+            }
+
+            return NoContent();
+        }
+
+        [HttpDelete("{vendorProductId}")]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(404)]
+        public IActionResult DeleteVendorProduct(int vendorProductId)
+        {
+            if (!_vendorProductRepository.VendorProductExists(vendorProductId))
+                return NotFound();
+
+            var vendorProductToDelete = _vendorProductRepository.GetVendorProduct(vendorProductId);
+
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            if(!_vendorProductRepository.DeleteVendorProduct(vendorProductToDelete))
+            {
+                ModelState.AddModelError("", "Something went wrong deleting product");
+            }
+
+            return NoContent();
+        }
+
     }
 }

@@ -79,7 +79,7 @@ namespace agri_connect_backend.Controllers
             return Ok("Successfully created");
         }
 
-        [HttpPut("{supplierProductId}")]
+        [HttpPut("{vendorProductId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
@@ -98,14 +98,14 @@ namespace agri_connect_backend.Controllers
 
             if(!_supplierProductRepository.UpdateSupplierProduct(supplierProductMap))
             {
-                ModelState.AddModelError("", "Something went wrong updating category");
+                ModelState.AddModelError("", "Something went wrong updating product");
                 return StatusCode(500, ModelState);
             }
 
             return NoContent();
         }
 
-        [HttpDelete("{supplierProductId}")]
+        [HttpDelete("{vendorProductId}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
