@@ -1,1 +1,24 @@
-<p>vendor-product-list works!</p>
+<div class="container">
+  <table *ngIf="vendorProducts && vendorProducts.length > 0">
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vendorProduct of vendorProducts">
+        <td>{{ vendorProduct.id }}</td>
+        <td>{{ vendorProduct.name }}</td>
+        <td>{{ vendorProduct.price }}</td>
+        <td>
+          <a [routerLink]="['/vendor-products', 'buy', vendorProduct.id]"
+            >Buy Product</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

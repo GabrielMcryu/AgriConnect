@@ -60,8 +60,6 @@ export class SellSupplierProductComponent implements OnInit {
 
     console.log(this.sellSupplierProductRequest);
 
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
     this.suppliersService
       .addSupplierTransaction(this.sellSupplierProductRequest)
       .subscribe({

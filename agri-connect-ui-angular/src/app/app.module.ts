@@ -9,9 +9,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { SupplierProductListComponent } from './components/suppliers/supplier-product-list/supplier-product-list.component';
 import { VendorProductListComponent } from './components/vendors/vendor-product-list/vendor-product-list.component';
 import { SellSupplierProductComponent } from './components/suppliers/sell-supplier-product/sell-supplier-product.component';
+import { BuyVendorProductComponent } from './components/vendors/buy-vendor-product/buy-vendor-product.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeViewComponent, SupplierProductListComponent, VendorProductListComponent, SellSupplierProductComponent],
+  declarations: [
+    AppComponent,
+    HomeViewComponent,
+    SupplierProductListComponent,
+    VendorProductListComponent,
+    SellSupplierProductComponent,
+    BuyVendorProductComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
