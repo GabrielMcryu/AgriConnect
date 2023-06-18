@@ -1,0 +1,24 @@
+<div class="container">
+  <table *ngIf="supplierProducts && supplierProducts.length > 0">
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let supplierProduct of supplierProducts">
+        <td>{{ supplierProduct.id }}</td>
+        <td>{{ supplierProduct.name }}</td>
+        <td>{{ supplierProduct.price }}</td>
+        <td>
+          <a [routerLink]="['/supplier-products', 'sell', supplierProduct.id]"
+            >Sell Product</a
+          >
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

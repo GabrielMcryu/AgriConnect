@@ -1,0 +1,23 @@
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="sellSupplierProduct()">
+    <div>
+      <label for="supplierName">Enter your Name:</label>
+      <input
+        type="text"
+        name="supplierName"
+        id="supplierName"
+        [(ngModel)]="sellSupplierProductRequest.supplierName"
+      />
+    </div>
+    <div>
+      <label for="productQuantity">Enter Product Quantity:</label>
+      <input
+        type="number"
+        name="productQuantity"
+        id="productQuantity"
+        [(ngModel)]="sellSupplierProductRequest.productQuantity"
+      />
+    </div>
+    <button type="submit">Sell</button>
+  </form>
+</div>
