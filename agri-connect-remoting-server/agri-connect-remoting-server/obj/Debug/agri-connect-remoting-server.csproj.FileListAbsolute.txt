@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\bin\Debug\agri-connect-remoting-server.exe.config
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\bin\Debug\agri-connect-remoting-server.exe
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\bin\Debug\agri-connect-remoting-server.pdb
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\bin\Debug\shared-interfaces.dll
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\bin\Debug\shared-interfaces.pdb
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\obj\Debug\agri-connect-remoting-server.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\obj\Debug\agri-connect-remoting-server.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\obj\Debug\agri-connect-remoting-server.csproj.CopyComplete
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\obj\Debug\agri-connect-remoting-server.exe
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-remoting-server\agri-connect-remoting-server\obj\Debug\agri-connect-remoting-server.pdb

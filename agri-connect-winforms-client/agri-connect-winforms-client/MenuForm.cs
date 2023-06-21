@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace agri_connect_winforms_client
 {
-    public partial class Form1 : Form
+    public partial class MenuForm : Form
     {
-        public Form1()
+        public MenuForm()
         {
             InitializeComponent();
+        }
+
+        private void sp_button_Click(object sender, EventArgs e)
+        {
+            SupplierProductForm supplierProductForm = new SupplierProductForm();
+            supplierProductForm.Show();
         }
     }
 }
