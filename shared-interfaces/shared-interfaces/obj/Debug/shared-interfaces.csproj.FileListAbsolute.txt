@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\shared-interfaces\shared-interfaces\bin\Debug\shared-interfaces.dll
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\shared-interfaces\shared-interfaces\bin\Debug\shared-interfaces.pdb
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\shared-interfaces\shared-interfaces\obj\Debug\shared-interfaces.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\shared-interfaces\shared-interfaces\obj\Debug\shared-interfaces.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\shared-interfaces\shared-interfaces\obj\Debug\shared-interfaces.dll
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\shared-interfaces\shared-interfaces\obj\Debug\shared-interfaces.pdb
