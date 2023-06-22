@@ -41,6 +41,8 @@ namespace agri_connect_winforms_client
             this.label5 = new System.Windows.Forms.Label();
             this.updateSupplierProductButton = new System.Windows.Forms.Button();
             this.deleteSupplierProductButton = new System.Windows.Forms.Button();
+            this.GetSupplierProductButton = new System.Windows.Forms.Button();
+            this.GetAllSupplierProductsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,11 +155,33 @@ namespace agri_connect_winforms_client
             this.deleteSupplierProductButton.UseVisualStyleBackColor = true;
             this.deleteSupplierProductButton.Click += new System.EventHandler(this.deleteSupplierProductButton_Click);
             // 
+            // GetSupplierProductButton
+            // 
+            this.GetSupplierProductButton.Location = new System.Drawing.Point(27, 215);
+            this.GetSupplierProductButton.Name = "GetSupplierProductButton";
+            this.GetSupplierProductButton.Size = new System.Drawing.Size(75, 23);
+            this.GetSupplierProductButton.TabIndex = 14;
+            this.GetSupplierProductButton.Text = "Get Product";
+            this.GetSupplierProductButton.UseVisualStyleBackColor = true;
+            this.GetSupplierProductButton.Click += new System.EventHandler(this.GetSupplierProductButton_Click);
+            // 
+            // GetAllSupplierProductsButton
+            // 
+            this.GetAllSupplierProductsButton.Location = new System.Drawing.Point(119, 214);
+            this.GetAllSupplierProductsButton.Name = "GetAllSupplierProductsButton";
+            this.GetAllSupplierProductsButton.Size = new System.Drawing.Size(100, 23);
+            this.GetAllSupplierProductsButton.TabIndex = 15;
+            this.GetAllSupplierProductsButton.Text = "Get All Products";
+            this.GetAllSupplierProductsButton.UseVisualStyleBackColor = true;
+            this.GetAllSupplierProductsButton.Click += new System.EventHandler(this.GetAllSupplierProductsButton_Click);
+            // 
             // SupplierProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GetAllSupplierProductsButton);
+            this.Controls.Add(this.GetSupplierProductButton);
             this.Controls.Add(this.deleteSupplierProductButton);
             this.Controls.Add(this.updateSupplierProductButton);
             this.Controls.Add(this.label5);
@@ -192,5 +216,7 @@ namespace agri_connect_winforms_client
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button updateSupplierProductButton;
         private System.Windows.Forms.Button deleteSupplierProductButton;
+        private System.Windows.Forms.Button GetSupplierProductButton;
+        private System.Windows.Forms.Button GetAllSupplierProductsButton;
     }
 }

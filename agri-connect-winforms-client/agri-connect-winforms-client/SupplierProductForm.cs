@@ -53,6 +53,20 @@ namespace agri_connect_winforms_client
             dataGridView1.DataSource = productsTable;
         }
 
+        private void ListSupplierProduct(int Id)
+        {
+            productsTable = new DataTable();
+            productsTable.Columns.Add("ID", typeof(int));
+            productsTable.Columns.Add("Name", typeof(string));
+            productsTable.Columns.Add("Price", typeof(int));
+
+            SupplierProductDto supplierProduct = isupplierProduct.GetSupplierProduct(Id);
+
+            productsTable.Rows.Add(supplierProduct.Id, supplierProduct.Name, supplierProduct.Price);
+
+            dataGridView1.DataSource = productsTable;
+        }
+
         private void addSupplierProductButton_Click(object sender, EventArgs e)
         {
             SupplierProductDto supplierProduct = new SupplierProductDto();
@@ -94,6 +108,17 @@ namespace agri_connect_winforms_client
 
                 ListSupplierProducts();
             }
+        }
+
+        private void GetSupplierProductButton_Click(object sender, EventArgs e)
+        {
+            int supplierProductId = int.Parse(idField.Text);
+            ListSupplierProduct(supplierProductId);
+        }
+
+        private void GetAllSupplierProductsButton_Click(object sender, EventArgs e)
+        {
+            ListSupplierProducts();
         }
     }
 }

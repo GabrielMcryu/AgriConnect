@@ -46,6 +46,37 @@ namespace agri_connect_remoting_server.Supplier
             }
         }
 
+        public SupplierProductDto GetSupplierProduct(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM SupplierProducts WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", Id);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if(reader.Read())
+                        {
+                            SupplierProductDto supplierProduct = new SupplierProductDto()
+                            {
+                                Id = (int)reader["Id"],
+                                Name = (string)reader["Name"],
+                                Price = (int)reader["Price"]
+                            };
+
+                            return supplierProduct;
+                        }
+                    }
+                }
+
+                connection.Close();
+            }
+            return null;
+        }
+
         public List<SupplierProductDto> GetSupplierProducts()
         {
             List<SupplierProductDto> supplierProducts = new List<SupplierProductDto>();

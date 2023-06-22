@@ -11,6 +11,7 @@ namespace shared_interfaces
     public interface ISupplierProduct
     {
         List<SupplierProductDto> GetSupplierProducts();
+        SupplierProductDto GetSupplierProduct(int Id);
         void AddSupplierProduct(SupplierProductDto supplierProductDto);
         void UpdateSupplierProduct(SupplierProductDto supplierProductDto);
         void DeleteSupplierProduct(int Id);
