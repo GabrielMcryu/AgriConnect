@@ -11,6 +11,7 @@ namespace shared_interfaces
     public interface ISupplierProduct
     {
         List<SupplierProductDto> GetSupplierProducts();
+        void AddSupplierProduct(SupplierProductDto supplierProductDto);
     }
 
     public interface ISupplierTransaction

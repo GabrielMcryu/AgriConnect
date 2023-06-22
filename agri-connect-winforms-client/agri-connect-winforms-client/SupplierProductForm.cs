@@ -52,5 +52,19 @@ namespace agri_connect_winforms_client
 
             dataGridView1.DataSource = productsTable;
         }
+
+        private void addSupplierProductButton_Click(object sender, EventArgs e)
+        {
+            SupplierProductDto supplierProduct = new SupplierProductDto();
+
+            supplierProduct.Name = nameField.Text;
+            supplierProduct.Price = int.Parse(priceField.Text);
+
+            isupplierProduct.AddSupplierProduct(supplierProduct);
+
+            MessageBox.Show("Product added successfully");
+
+            ListSupplierProducts();
+        }
     }
 }
