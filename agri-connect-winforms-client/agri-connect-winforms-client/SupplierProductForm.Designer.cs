@@ -40,6 +40,7 @@ namespace agri_connect_winforms_client
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.updateSupplierProductButton = new System.Windows.Forms.Button();
+            this.deleteSupplierProductButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,11 +143,22 @@ namespace agri_connect_winforms_client
             this.updateSupplierProductButton.UseVisualStyleBackColor = true;
             this.updateSupplierProductButton.Click += new System.EventHandler(this.updateSupplierProductButton_Click);
             // 
+            // deleteSupplierProductButton
+            // 
+            this.deleteSupplierProductButton.Location = new System.Drawing.Point(234, 185);
+            this.deleteSupplierProductButton.Name = "deleteSupplierProductButton";
+            this.deleteSupplierProductButton.Size = new System.Drawing.Size(88, 23);
+            this.deleteSupplierProductButton.TabIndex = 13;
+            this.deleteSupplierProductButton.Text = "Delete Product";
+            this.deleteSupplierProductButton.UseVisualStyleBackColor = true;
+            this.deleteSupplierProductButton.Click += new System.EventHandler(this.deleteSupplierProductButton_Click);
+            // 
             // SupplierProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deleteSupplierProductButton);
             this.Controls.Add(this.updateSupplierProductButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -179,5 +191,6 @@ namespace agri_connect_winforms_client
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button updateSupplierProductButton;
+        private System.Windows.Forms.Button deleteSupplierProductButton;
     }
 }

@@ -81,5 +81,19 @@ namespace agri_connect_winforms_client
 
             ListSupplierProducts();
         }
+
+        private void deleteSupplierProductButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure to delete?", "Delete Document", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int supplierProductId = int.Parse(idField.Text);
+
+                isupplierProduct.DeleteSupplierProduct(supplierProductId);
+
+                MessageBox.Show("Product deleted successfully");
+
+                ListSupplierProducts();
+            }
+        }
     }
 }

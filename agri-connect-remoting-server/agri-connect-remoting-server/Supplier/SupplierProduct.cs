@@ -29,6 +29,23 @@ namespace agri_connect_remoting_server.Supplier
             }
         }
 
+        public void DeleteSupplierProduct(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("DELETE FROM SupplierProducts WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", Id);
+
+                    command.ExecuteNonQuery();
+                }
+
+                connection.Close();
+            }
+        }
+
         public List<SupplierProductDto> GetSupplierProducts()
         {
             List<SupplierProductDto> supplierProducts = new List<SupplierProductDto>();
