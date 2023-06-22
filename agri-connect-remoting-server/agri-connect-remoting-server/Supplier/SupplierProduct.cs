@@ -33,13 +33,13 @@ namespace agri_connect_remoting_server.Supplier
         {
             List<SupplierProductDto> supplierProducts = new List<SupplierProductDto>();
 
-            using (SqlConnection con = new SqlConnection(connectionString)) 
+            using (SqlConnection connection = new SqlConnection(connectionString)) 
             {
                 string query = "SELECT * FROM SupplierProducts";
 
-                using (SqlCommand command = new SqlCommand(query, con))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    con.Open();
+                    connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
@@ -53,13 +53,30 @@ namespace agri_connect_remoting_server.Supplier
                         }
                     }
                 }
-                con.Close();
+                connection.Close();
             }
             
 
             return supplierProducts;
         }
 
+        public void UpdateSupplierProduct(SupplierProductDto supplierProductDto)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
 
+                using (SqlCommand command = new SqlCommand("Update SupplierProducts SET Name = @Name, Price = @Price WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Name", supplierProductDto.Name);
+                    command.Parameters.AddWithValue("@Price", supplierProductDto.Price);
+                    command.Parameters.AddWithValue("@Id", supplierProductDto.Id);
+
+                    command.ExecuteNonQuery();
+                }
+
+                connection.Close();
+            }
+        }
     }
 }

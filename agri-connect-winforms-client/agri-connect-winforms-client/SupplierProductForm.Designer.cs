@@ -39,6 +39,7 @@ namespace agri_connect_winforms_client
             this.addSupplierProductButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.updateSupplierProductButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,11 +132,22 @@ namespace agri_connect_winforms_client
             this.label5.TabIndex = 11;
             this.label5.Text = "Supplier Product Board";
             // 
+            // updateSupplierProductButton
+            // 
+            this.updateSupplierProductButton.Location = new System.Drawing.Point(119, 186);
+            this.updateSupplierProductButton.Name = "updateSupplierProductButton";
+            this.updateSupplierProductButton.Size = new System.Drawing.Size(90, 23);
+            this.updateSupplierProductButton.TabIndex = 12;
+            this.updateSupplierProductButton.Text = "Update Product";
+            this.updateSupplierProductButton.UseVisualStyleBackColor = true;
+            this.updateSupplierProductButton.Click += new System.EventHandler(this.updateSupplierProductButton_Click);
+            // 
             // SupplierProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.updateSupplierProductButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.addSupplierProductButton);
@@ -166,5 +178,6 @@ namespace agri_connect_winforms_client
         private System.Windows.Forms.Button addSupplierProductButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button updateSupplierProductButton;
     }
 }

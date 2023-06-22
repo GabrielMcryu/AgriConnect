@@ -66,5 +66,20 @@ namespace agri_connect_winforms_client
 
             ListSupplierProducts();
         }
+
+        private void updateSupplierProductButton_Click(object sender, EventArgs e)
+        {
+            SupplierProductDto supplierProduct = new SupplierProductDto();
+
+            supplierProduct.Id = int.Parse(idField.Text);
+            supplierProduct.Name = nameField.Text;
+            supplierProduct.Price = int.Parse(priceField.Text);
+
+            isupplierProduct.UpdateSupplierProduct(supplierProduct);
+
+            MessageBox.Show("Product updated successfully");
+
+            ListSupplierProducts();
+        }
     }
 }
