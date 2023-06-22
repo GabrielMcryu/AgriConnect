@@ -56,8 +56,27 @@ namespace agri_connect_winforms_client
             dataGridView1.Columns["Date"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
 
+        private void ListSupplierTransaction(int Id)
+        {
+            transactionsTable = new DataTable();
+            transactionsTable.Columns.Add("ID", typeof(int));
+            transactionsTable.Columns.Add("Supplier", typeof(string));
+            transactionsTable.Columns.Add("Product", typeof(string));
+            transactionsTable.Columns.Add("Quantity", typeof(int));
+            transactionsTable.Columns.Add("Cost", typeof(int));
+            transactionsTable.Columns.Add("Date", typeof(DateTime));
+
+            SupplierTransactionDto supplierTransaction = iSupplierTransaction.GetSupplierTransaction(Id);
+
+            transactionsTable.Rows.Add(supplierTransaction.Id, supplierTransaction.SupplierName, supplierTransaction.ProductName, supplierTransaction.ProductQuantity, supplierTransaction.Cost, supplierTransaction.TransactionDate);
+
+            dataGridView1.DataSource = transactionsTable;
+        }
+
         private void GetSupplierTransactionButton_Click(object sender, EventArgs e)
         {
+            int supplierTransactionId = int.Parse(idField.Text);
+            ListSupplierTransaction(supplierTransactionId);
 
         }
 

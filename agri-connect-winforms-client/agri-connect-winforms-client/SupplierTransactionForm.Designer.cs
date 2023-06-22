@@ -30,7 +30,7 @@ namespace agri_connect_winforms_client
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.idField = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GetSupplierTransactionButton = new System.Windows.Forms.Button();
             this.GetAllTransactionsButton = new System.Windows.Forms.Button();
@@ -45,13 +45,13 @@ namespace agri_connect_winforms_client
             this.dataGridView1.Size = new System.Drawing.Size(797, 231);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textBox1
+            // idField
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(108, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 1;
+            this.idField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idField.Location = new System.Drawing.Point(108, 46);
+            this.idField.Name = "idField";
+            this.idField.Size = new System.Drawing.Size(100, 23);
+            this.idField.TabIndex = 1;
             // 
             // label1
             // 
@@ -91,7 +91,7 @@ namespace agri_connect_winforms_client
             this.Controls.Add(this.GetAllTransactionsButton);
             this.Controls.Add(this.GetSupplierTransactionButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.idField);
             this.Controls.Add(this.dataGridView1);
             this.Name = "SupplierTransactionForm";
             this.Text = "SupplierTransactionForm";
@@ -105,7 +105,7 @@ namespace agri_connect_winforms_client
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox idField;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button GetSupplierTransactionButton;
         private System.Windows.Forms.Button GetAllTransactionsButton;

@@ -20,6 +20,7 @@ namespace shared_interfaces
     public interface ISupplierTransaction
     {
         List<SupplierTransactionDto> GetSupplierTransactions();
+        SupplierTransactionDto GetSupplierTransaction(int Id);
     }
 
     public interface IVendorProduct
