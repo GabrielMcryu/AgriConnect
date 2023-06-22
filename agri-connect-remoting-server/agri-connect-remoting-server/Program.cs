@@ -20,6 +20,8 @@ namespace agri_connect_remoting_server
             // Register the remote object.
             RemotingConfiguration.RegisterWellKnownServiceType(
                 typeof(Supplier.SupplierProduct), "SupplierProduct", WellKnownObjectMode.Singleton);
+            RemotingConfiguration.RegisterWellKnownServiceType(
+                typeof(Supplier.SupplierTransaction), "SupplierTransaction", WellKnownObjectMode.Singleton);
 
             Console.WriteLine("Server is running. Press enter to exit.");
             Console.ReadLine();

@@ -53,6 +53,7 @@ namespace agri_connect_winforms_client
             this.st_button.TabIndex = 1;
             this.st_button.Text = "Supplier Transaction";
             this.st_button.UseVisualStyleBackColor = true;
+            this.st_button.Click += new System.EventHandler(this.st_button_Click);
             // 
             // button3
             // 
