@@ -25,7 +25,7 @@ namespace shared_interfaces
 
     public interface IVendorProduct
     {
-
+        List<VendorProductDto> GetVendorProducts();
     }
 
     public interface IVendorTransaction

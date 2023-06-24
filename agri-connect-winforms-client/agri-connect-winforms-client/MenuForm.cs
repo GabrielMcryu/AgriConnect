@@ -28,5 +28,11 @@ namespace agri_connect_winforms_client
             SupplierTransactionForm supplierTransactionForm = new SupplierTransactionForm();
             supplierTransactionForm.Show();
         }
+
+        private void vp_button_Click(object sender, EventArgs e)
+        {
+            VendorProductForm vendorProductForm = new VendorProductForm();
+            vendorProductForm.Show();
+        }
     }
 }

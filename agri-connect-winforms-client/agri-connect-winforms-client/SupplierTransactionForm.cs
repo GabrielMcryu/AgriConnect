@@ -18,6 +18,7 @@ namespace agri_connect_winforms_client
     {
         private ISupplierTransaction iSupplierTransaction;
         private DataTable transactionsTable;
+        private TcpChannel channel;
 
         public SupplierTransactionForm()
         {
@@ -26,7 +27,7 @@ namespace agri_connect_winforms_client
 
         private void SupplierTransactionForm_Load(object sender, EventArgs e)
         {
-            TcpChannel channel = new TcpChannel();
+            channel = new TcpChannel();
             ChannelServices.RegisterChannel(channel, false);
 
             iSupplierTransaction = (ISupplierTransaction)Activator.GetObject(
@@ -83,6 +84,11 @@ namespace agri_connect_winforms_client
         private void GetAllTransactionsButton_Click(object sender, EventArgs e)
         {
             ListSupplierTransactions();
+        }
+
+        private void SupplierTransactionForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ChannelServices.UnregisterChannel(channel);
         }
     }
 }

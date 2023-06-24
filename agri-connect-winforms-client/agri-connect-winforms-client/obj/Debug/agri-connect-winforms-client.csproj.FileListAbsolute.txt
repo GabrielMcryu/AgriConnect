@@ -13,3 +13,4 @@ C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-winform
 C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-winforms-client\agri-connect-winforms-client\obj\Debug\agri_connect_winforms_client.SupplierProductForm.resources
 C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-winforms-client\agri-connect-winforms-client\obj\Debug\agri_connect_winforms_client.MenuForm.resources
 C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-winforms-client\agri-connect-winforms-client\obj\Debug\agri_connect_winforms_client.SupplierTransactionForm.resources
+C:\Users\User\Desktop\SWE\jenga stuff\sprint 5\agri-connect\agri-connect-winforms-client\agri-connect-winforms-client\obj\Debug\agri_connect_winforms_client.VendorProductForm.resources

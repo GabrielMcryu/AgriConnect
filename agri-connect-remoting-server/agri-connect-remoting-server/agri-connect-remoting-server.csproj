@@ -51,12 +51,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Supplier\SupplierProduct.cs" />
     <Compile Include="Supplier\SupplierTransaction.cs" />
+    <Compile Include="Vendor\VendorProduct.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Vendor\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

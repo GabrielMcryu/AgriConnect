@@ -95,6 +95,7 @@ namespace agri_connect_winforms_client
             this.Controls.Add(this.dataGridView1);
             this.Name = "SupplierTransactionForm";
             this.Text = "SupplierTransactionForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SupplierTransactionForm_FormClosing);
             this.Load += new System.EventHandler(this.SupplierTransactionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

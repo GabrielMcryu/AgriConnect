@@ -19,6 +19,7 @@ namespace agri_connect_winforms_client
     {
         private ISupplierProduct isupplierProduct;
         private DataTable productsTable;
+        private TcpChannel channel;
 
         public SupplierProductForm()
         {
@@ -27,7 +28,7 @@ namespace agri_connect_winforms_client
 
         private void SupplierProductForm_Load(object sender, EventArgs e)
         {
-            TcpChannel channel = new TcpChannel();
+            channel = new TcpChannel();
             ChannelServices.RegisterChannel(channel, false);
 
             isupplierProduct = (ISupplierProduct)Activator.GetObject(
@@ -35,6 +36,11 @@ namespace agri_connect_winforms_client
 
             ListSupplierProducts();
 
+        }
+
+        private void SupplierProductForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ChannelServices.UnregisterChannel(channel);
         }
 
         private void ListSupplierProducts()

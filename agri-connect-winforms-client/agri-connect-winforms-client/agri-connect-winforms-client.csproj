@@ -70,6 +70,12 @@
     <Compile Include="SupplierTransactionForm.Designer.cs">
       <DependentUpon>SupplierTransactionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VendorProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VendorProductForm.Designer.cs">
+      <DependentUpon>VendorProductForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierTransactionForm.resx">
       <DependentUpon>SupplierTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VendorProductForm.resx">
+      <DependentUpon>VendorProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
