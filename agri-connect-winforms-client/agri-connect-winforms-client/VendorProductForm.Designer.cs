@@ -39,6 +39,7 @@ namespace agri_connect_winforms_client
             this.nameField = new System.Windows.Forms.TextBox();
             this.priceField = new System.Windows.Forms.TextBox();
             this.AddVendorProductButton = new System.Windows.Forms.Button();
+            this.UpdateVendorProductButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,11 +135,22 @@ namespace agri_connect_winforms_client
             this.AddVendorProductButton.UseVisualStyleBackColor = true;
             this.AddVendorProductButton.Click += new System.EventHandler(this.AddVendorProductButton_Click);
             // 
+            // UpdateVendorProductButton
+            // 
+            this.UpdateVendorProductButton.Location = new System.Drawing.Point(116, 229);
+            this.UpdateVendorProductButton.Name = "UpdateVendorProductButton";
+            this.UpdateVendorProductButton.Size = new System.Drawing.Size(100, 23);
+            this.UpdateVendorProductButton.TabIndex = 10;
+            this.UpdateVendorProductButton.Text = "Update Product";
+            this.UpdateVendorProductButton.UseVisualStyleBackColor = true;
+            this.UpdateVendorProductButton.Click += new System.EventHandler(this.UpdateVendorProductButton_Click);
+            // 
             // VendorProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.UpdateVendorProductButton);
             this.Controls.Add(this.AddVendorProductButton);
             this.Controls.Add(this.priceField);
             this.Controls.Add(this.nameField);
@@ -171,5 +183,6 @@ namespace agri_connect_winforms_client
         private System.Windows.Forms.TextBox nameField;
         private System.Windows.Forms.TextBox priceField;
         private System.Windows.Forms.Button AddVendorProductButton;
+        private System.Windows.Forms.Button UpdateVendorProductButton;
     }
 }

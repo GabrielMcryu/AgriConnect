@@ -88,5 +88,24 @@ namespace agri_connect_remoting_server.Vendor
                 return vendorProducts;
             }
         }
+
+        public void UpdateVendorproduct(VendorProductDto vendorProductDto)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("Update VendorProducts SET Name = @Name, Price = @Price WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Name", vendorProductDto.Name);
+                    command.Parameters.AddWithValue("@Price", vendorProductDto.Price);
+                    command.Parameters.AddWithValue("@Id", vendorProductDto.Id);
+
+                    command.ExecuteNonQuery();
+                }
+
+                connection.Close();
+            }
+        }
     }
 }
