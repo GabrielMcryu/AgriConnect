@@ -32,7 +32,7 @@ namespace agri_connect_winforms_client
             this.sp_button = new System.Windows.Forms.Button();
             this.st_button = new System.Windows.Forms.Button();
             this.vp_button = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.vt_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // sp_button
@@ -65,21 +65,22 @@ namespace agri_connect_winforms_client
             this.vp_button.UseVisualStyleBackColor = true;
             this.vp_button.Click += new System.EventHandler(this.vp_button_Click);
             // 
-            // button4
+            // vt_button
             // 
-            this.button4.Location = new System.Drawing.Point(116, 270);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Vendor Trnasaction";
-            this.button4.UseVisualStyleBackColor = true;
+            this.vt_button.Location = new System.Drawing.Point(116, 270);
+            this.vt_button.Name = "vt_button";
+            this.vt_button.Size = new System.Drawing.Size(129, 23);
+            this.vt_button.TabIndex = 3;
+            this.vt_button.Text = "Vendor Transaction";
+            this.vt_button.UseVisualStyleBackColor = true;
+            this.vt_button.Click += new System.EventHandler(this.vt_button_Click);
             // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 417);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.vt_button);
             this.Controls.Add(this.vp_button);
             this.Controls.Add(this.st_button);
             this.Controls.Add(this.sp_button);
@@ -94,6 +95,6 @@ namespace agri_connect_winforms_client
         private System.Windows.Forms.Button sp_button;
         private System.Windows.Forms.Button st_button;
         private System.Windows.Forms.Button vp_button;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button vt_button;
     }
 }

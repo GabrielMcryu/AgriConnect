@@ -52,6 +52,7 @@
     <Compile Include="Supplier\SupplierProduct.cs" />
     <Compile Include="Supplier\SupplierTransaction.cs" />
     <Compile Include="Vendor\VendorProduct.cs" />
+    <Compile Include="Vendor\VendorTransaction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
