@@ -35,5 +35,6 @@ namespace shared_interfaces
     public interface IVendorTransaction
     {
         List<VendorTransactionDto> GetVendorTransactions();
+        VendorTransactionDto GetVendorTransaction(int Id);
     }
 }
