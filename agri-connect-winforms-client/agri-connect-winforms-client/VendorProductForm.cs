@@ -57,9 +57,29 @@ namespace agri_connect_winforms_client
             dataGridView1.DataSource = productsTable;
         }
 
+        private void ListVendorProduct(int Id)
+        {
+            productsTable = new DataTable();
+            productsTable.Columns.Add("ID", typeof(int));
+            productsTable.Columns.Add("Name", typeof(string));
+            productsTable.Columns.Add("Price", typeof(int));
+
+            VendorProductDto vendorProduct = iVendorProduct.GetVendorProduct(Id);
+
+            productsTable.Rows.Add(vendorProduct.Id, vendorProduct.Name, vendorProduct.Price);
+
+            dataGridView1.DataSource = productsTable;
+        }
+
         private void GetAllVendorProductsButton_Click(object sender, EventArgs e)
         {
             ListVendorProducts();
+        }
+
+        private void GetVendorProductButton_Click(object sender, EventArgs e)
+        {
+            int vendorProductId = int.Parse(idField.Text);
+            ListVendorProduct(vendorProductId);
         }
     }
 }

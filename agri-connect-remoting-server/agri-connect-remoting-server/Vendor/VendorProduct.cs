@@ -13,6 +13,37 @@ namespace agri_connect_remoting_server.Vendor
     {
         public static string connectionString = "Data Source=DESKTOP-UFTA8G9;Initial Catalog=AgriConnect;Integrated Security=True";
 
+        public VendorProductDto GetVendorProduct(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM VendorProducts WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", Id);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if(reader.Read())
+                        {
+                            VendorProductDto vendorProduct = new VendorProductDto()
+                            {
+                                Id = (int)reader["Id"],
+                                Name = (string)reader["Name"],
+                                Price = (int)reader["Price"]
+                            };
+
+                            return vendorProduct;
+                        }
+                    }
+                }
+
+                connection.Close();
+            }
+            return null;
+        }
+
         public List<VendorProductDto> GetVendorProducts()
         {
             List<VendorProductDto> vendorProducts = new List<VendorProductDto>();

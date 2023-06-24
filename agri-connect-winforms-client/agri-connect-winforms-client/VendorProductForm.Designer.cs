@@ -31,6 +31,9 @@ namespace agri_connect_winforms_client
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.GetAllVendorProductsButton = new System.Windows.Forms.Button();
+            this.GetVendorProductButton = new System.Windows.Forms.Button();
+            this.idField = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +55,42 @@ namespace agri_connect_winforms_client
             this.GetAllVendorProductsButton.UseVisualStyleBackColor = true;
             this.GetAllVendorProductsButton.Click += new System.EventHandler(this.GetAllVendorProductsButton_Click);
             // 
+            // GetVendorProductButton
+            // 
+            this.GetVendorProductButton.Location = new System.Drawing.Point(230, 185);
+            this.GetVendorProductButton.Name = "GetVendorProductButton";
+            this.GetVendorProductButton.Size = new System.Drawing.Size(75, 23);
+            this.GetVendorProductButton.TabIndex = 2;
+            this.GetVendorProductButton.Text = "Get Product";
+            this.GetVendorProductButton.UseVisualStyleBackColor = true;
+            this.GetVendorProductButton.Click += new System.EventHandler(this.GetVendorProductButton_Click);
+            // 
+            // idField
+            // 
+            this.idField.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idField.Location = new System.Drawing.Point(75, 43);
+            this.idField.Name = "idField";
+            this.idField.Size = new System.Drawing.Size(100, 23);
+            this.idField.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Id:";
+            // 
             // VendorProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.idField);
+            this.Controls.Add(this.GetVendorProductButton);
             this.Controls.Add(this.GetAllVendorProductsButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "VendorProductForm";
@@ -65,6 +99,7 @@ namespace agri_connect_winforms_client
             this.Load += new System.EventHandler(this.VendorProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -72,5 +107,8 @@ namespace agri_connect_winforms_client
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button GetAllVendorProductsButton;
+        private System.Windows.Forms.Button GetVendorProductButton;
+        private System.Windows.Forms.TextBox idField;
+        private System.Windows.Forms.Label label1;
     }
 }
