@@ -29,6 +29,7 @@ namespace shared_interfaces
         VendorProductDto GetVendorProduct(int Id);
         void AddVendorProduct(VendorProductDto vendorProductDto);
         void UpdateVendorproduct(VendorProductDto vendorProductDto);
+        void DeleteVendorProduct(int Id);
     }
 
     public interface IVendorTransaction

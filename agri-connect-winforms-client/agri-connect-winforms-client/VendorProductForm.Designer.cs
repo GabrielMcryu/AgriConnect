@@ -40,20 +40,21 @@ namespace agri_connect_winforms_client
             this.priceField = new System.Windows.Forms.TextBox();
             this.AddVendorProductButton = new System.Windows.Forms.Button();
             this.UpdateVendorProductButton = new System.Windows.Forms.Button();
+            this.DeleteVendorProductButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 288);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 258);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 180);
             this.dataGridView1.TabIndex = 0;
             // 
             // GetAllVendorProductsButton
             // 
-            this.GetAllVendorProductsButton.Location = new System.Drawing.Point(333, 185);
+            this.GetAllVendorProductsButton.Location = new System.Drawing.Point(195, 229);
             this.GetAllVendorProductsButton.Name = "GetAllVendorProductsButton";
             this.GetAllVendorProductsButton.Size = new System.Drawing.Size(102, 23);
             this.GetAllVendorProductsButton.TabIndex = 1;
@@ -63,7 +64,7 @@ namespace agri_connect_winforms_client
             // 
             // GetVendorProductButton
             // 
-            this.GetVendorProductButton.Location = new System.Drawing.Point(230, 185);
+            this.GetVendorProductButton.Location = new System.Drawing.Point(104, 229);
             this.GetVendorProductButton.Name = "GetVendorProductButton";
             this.GetVendorProductButton.Size = new System.Drawing.Size(75, 23);
             this.GetVendorProductButton.TabIndex = 2;
@@ -127,7 +128,7 @@ namespace agri_connect_winforms_client
             // 
             // AddVendorProductButton
             // 
-            this.AddVendorProductButton.Location = new System.Drawing.Point(116, 184);
+            this.AddVendorProductButton.Location = new System.Drawing.Point(104, 184);
             this.AddVendorProductButton.Name = "AddVendorProductButton";
             this.AddVendorProductButton.Size = new System.Drawing.Size(75, 23);
             this.AddVendorProductButton.TabIndex = 9;
@@ -137,7 +138,7 @@ namespace agri_connect_winforms_client
             // 
             // UpdateVendorProductButton
             // 
-            this.UpdateVendorProductButton.Location = new System.Drawing.Point(116, 229);
+            this.UpdateVendorProductButton.Location = new System.Drawing.Point(195, 184);
             this.UpdateVendorProductButton.Name = "UpdateVendorProductButton";
             this.UpdateVendorProductButton.Size = new System.Drawing.Size(100, 23);
             this.UpdateVendorProductButton.TabIndex = 10;
@@ -145,11 +146,22 @@ namespace agri_connect_winforms_client
             this.UpdateVendorProductButton.UseVisualStyleBackColor = true;
             this.UpdateVendorProductButton.Click += new System.EventHandler(this.UpdateVendorProductButton_Click);
             // 
+            // DeleteVendorProductButton
+            // 
+            this.DeleteVendorProductButton.Location = new System.Drawing.Point(313, 184);
+            this.DeleteVendorProductButton.Name = "DeleteVendorProductButton";
+            this.DeleteVendorProductButton.Size = new System.Drawing.Size(88, 23);
+            this.DeleteVendorProductButton.TabIndex = 11;
+            this.DeleteVendorProductButton.Text = "Delete Product";
+            this.DeleteVendorProductButton.UseVisualStyleBackColor = true;
+            this.DeleteVendorProductButton.Click += new System.EventHandler(this.DeleteVendorProductButton_Click);
+            // 
             // VendorProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DeleteVendorProductButton);
             this.Controls.Add(this.UpdateVendorProductButton);
             this.Controls.Add(this.AddVendorProductButton);
             this.Controls.Add(this.priceField);
@@ -184,5 +196,6 @@ namespace agri_connect_winforms_client
         private System.Windows.Forms.TextBox priceField;
         private System.Windows.Forms.Button AddVendorProductButton;
         private System.Windows.Forms.Button UpdateVendorProductButton;
+        private System.Windows.Forms.Button DeleteVendorProductButton;
     }
 }

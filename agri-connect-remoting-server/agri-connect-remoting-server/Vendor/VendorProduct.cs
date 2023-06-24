@@ -28,6 +28,23 @@ namespace agri_connect_remoting_server.Vendor
             }
         }
 
+        public void DeleteVendorProduct(int Id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("DELETE FROM VendorProducts WHERE Id = @Id", connection))
+                {
+                    command.Parameters.AddWithValue("@Id", Id);
+
+                    command.ExecuteNonQuery();
+                }
+
+                connection.Close();
+            }
+        }
+
         public VendorProductDto GetVendorProduct(int Id)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
