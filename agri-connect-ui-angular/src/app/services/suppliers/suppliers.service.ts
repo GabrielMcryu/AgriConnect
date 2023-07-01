@@ -29,7 +29,7 @@ export class SuppliersService {
     addSupplierTransactionRequest: SupplierTransaction
   ): Observable<SupplierTransaction> {
     return this.http.post<SupplierTransaction>(
-      this.baseApiUrl + '/api/SupplierTransaction',
+      this.baseApiUrl + '/api/SupplierTransaction/',
       addSupplierTransactionRequest
     );
   }
