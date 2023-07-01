@@ -74,7 +74,7 @@ namespace agri_connect_backend.Controllers
                 return BadRequest(new { Message = pass.ToString() });
 
             userObj.Password = PasswordHasher.HashPassword(userObj.Password);
-            userObj.Role = "Supplier";
+            // userObj.Role = "Supplier";
             userObj.Token = "";
 
             await _authContext.Users.AddAsync(userObj);

@@ -5,6 +5,9 @@ import { SupplierProductListComponent } from './components/suppliers/supplier-pr
 import { VendorProductListComponent } from './components/vendors/vendor-product-list/vendor-product-list.component';
 import { SellSupplierProductComponent } from './components/suppliers/sell-supplier-product/sell-supplier-product.component';
 import { BuyVendorProductComponent } from './components/vendors/buy-vendor-product/buy-vendor-product.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -26,6 +29,18 @@ const routes: Routes = [
   {
     path: 'vendor-products/buy/:id',
     component: BuyVendorProductComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
   },
 ];
 

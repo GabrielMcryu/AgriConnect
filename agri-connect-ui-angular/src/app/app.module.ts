@@ -11,6 +11,9 @@ import { VendorProductListComponent } from './components/vendors/vendor-product-
 import { SellSupplierProductComponent } from './components/suppliers/sell-supplier-product/sell-supplier-product.component';
 import { BuyVendorProductComponent } from './components/vendors/buy-vendor-product/buy-vendor-product.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     VendorProductListComponent,
     SellSupplierProductComponent,
     BuyVendorProductComponent,
+    DashboardComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
