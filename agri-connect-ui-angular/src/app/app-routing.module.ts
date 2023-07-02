@@ -18,18 +18,22 @@ const routes: Routes = [
   {
     path: 'supplier-products',
     component: SupplierProductListComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'supplier-products/sell/:id',
     component: SellSupplierProductComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'vendor-products',
     component: VendorProductListComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'vendor-products/buy/:id',
     component: BuyVendorProductComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',

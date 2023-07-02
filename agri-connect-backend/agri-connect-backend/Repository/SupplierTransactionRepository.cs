@@ -29,6 +29,11 @@ namespace agri_connect_backend.Repository
             return _context.SupplierTransactions.ToList();
         }
 
+        public ICollection<SupplierTransaction> GetSupplierTransactionsBySupplierName(string supplierName)
+        {
+            return _context.SupplierTransactions.Where(s => s.SupplierName == supplierName).ToList();
+        }
+
         public bool Save()
         {
             var saved = _context.SaveChanges();

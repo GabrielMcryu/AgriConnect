@@ -31,6 +31,13 @@ namespace agri_connect_backend.Controllers
             return Ok(vendorTransactions);
         }
 
+        [HttpGet("vendorName/{vendorName}")]
+        public IActionResult GetVendorTransactionsByVendorName(string vendorName)
+        {
+            var vendorTransactions = _vendorTransactionRepository.GetVendorTransactionsByVendorName(vendorName);
+            return Ok(vendorTransactions);
+        }
+
         [HttpGet("{vendorTransactionId}")]
         [ProducesResponseType(200, Type = typeof(VendorTransaction))]
         [ProducesResponseType(400)]
