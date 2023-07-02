@@ -16,7 +16,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
-            class="nav-link active"
+            class="nav-link"
             aria-current="page"
             href=""
             routerLink="/supplier-products"
@@ -25,7 +25,7 @@
         </li>
         <li class="nav-item">
           <a
-            class="nav-link"
+            class="nav-link active"
             href=""
             [routerLink]="'/supplier-transactions/' + fullName"
             >My Transactions</a
@@ -43,26 +43,29 @@
   </div>
 </nav>
 
-<p>{{ role }} {{ fullName }}</p>
 <div class="container">
-  <table *ngIf="supplierProducts && supplierProducts.length > 0">
+  <table *ngIf="supplierTransactions && supplierTransactions.length > 0">
     <thead>
       <tr>
-        <th>Product Id</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th></th>
+        <th>Transaction Id</th>
+        <th>Supplier Name</th>
+        <th>Product Name</th>
+        <th>Product Quantity</th>
+        <th>Cost</th>
+        <th>Transaction Date</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let supplierProduct of supplierProducts">
-        <td>{{ supplierProduct.id }}</td>
-        <td>{{ supplierProduct.name }}</td>
-        <td>{{ supplierProduct.price }}</td>
+      <tr *ngFor="let supplierTransaction of supplierTransactions">
+        <td>{{ supplierTransaction.id }}</td>
+        <td>{{ supplierTransaction.supplierName }}</td>
+        <td>{{ supplierTransaction.productName }}</td>
+        <td>{{ supplierTransaction.productQuantity }}</td>
+        <td>{{ supplierTransaction.cost }}</td>
         <td>
-          <a [routerLink]="['/supplier-products', 'sell', supplierProduct.id]"
-            >Sell Product</a
-          >
+          {{
+            supplierTransaction.transactionDate | date : "dd/MM/yyyy HH:mm:ss"
+          }}
         </td>
       </tr>
     </tbody>

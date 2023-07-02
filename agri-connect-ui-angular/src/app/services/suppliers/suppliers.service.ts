@@ -34,6 +34,14 @@ export class SuppliersService {
     );
   }
 
+  getSupplierTransactionsBySupplierName(
+    supplierName: string
+  ): Observable<SupplierTransaction[]> {
+    return this.http.get<SupplierTransaction[]>(
+      this.baseApiUrl + '/api/SupplierTransaction/supplierName/' + supplierName
+    );
+  }
+
   // addSupplierTransaction(
   //   addSupplierTransactionRequest: SupplierTransaction
   // ): Observable<SupplierTransaction> {

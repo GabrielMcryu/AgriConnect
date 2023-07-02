@@ -14,6 +14,9 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { SupplierTransactionListComponent } from './components/suppliers/supplier-transaction-list/supplier-transaction-list.component';
+import { VendorTransactionListComponent } from './components/vendors/vendor-transaction-list/vendor-transaction-list.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,8 @@ import { SignupComponent } from './components/signup/signup.component';
     DashboardComponent,
     LoginComponent,
     SignupComponent,
+    SupplierTransactionListComponent,
+    VendorTransactionListComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,7 @@ import { SignupComponent } from './components/signup/signup.component';
       useClass: TokenInterceptor,
       multi: true,
     },
+    DatePipe,
   ],
   bootstrap: [AppComponent],
 })

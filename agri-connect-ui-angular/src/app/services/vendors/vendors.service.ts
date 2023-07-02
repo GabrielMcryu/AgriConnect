@@ -33,4 +33,12 @@ export class VendorsService {
       addVendorTransactionRequest
     );
   }
+
+  getVendorTransactionsByVendorName(
+    vendorName: string
+  ): Observable<VendorTransaction[]> {
+    return this.http.get<VendorTransaction[]>(
+      this.baseApiUrl + '/api/VendorTransaction/vendorName/' + vendorName
+    );
+  }
 }

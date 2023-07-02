@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" routerLink="">Agri Connect</a>
+    <a class="navbar-brand" href="" routerLink="/vendor-products"
+      >Agri Connect</a
+    >
     <button
       class="navbar-toggler"
       type="button"
@@ -16,18 +18,18 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
-            class="nav-link active"
+            class="nav-link"
             aria-current="page"
             href=""
-            routerLink="/supplier-products"
+            routerLink="/vendor-products"
             >Products</a
           >
         </li>
         <li class="nav-item">
           <a
-            class="nav-link"
+            class="nav-link active"
             href=""
-            [routerLink]="'/supplier-transactions/' + fullName"
+            [routerLink]="'/vendor-transactions/' + fullName"
             >My Transactions</a
           >
         </li>
@@ -35,7 +37,6 @@
       <span class="px-2">Welcome {{ fullName }}</span>
       <a
         class="nav-link btn btn-danger btn-lg px-4 py-2 text-white"
-        href=""
         (click)="logout(); (false)"
         >Logout</a
       >
@@ -43,26 +44,27 @@
   </div>
 </nav>
 
-<p>{{ role }} {{ fullName }}</p>
 <div class="container">
-  <table *ngIf="supplierProducts && supplierProducts.length > 0">
+  <table *ngIf="vendorTransactions && vendorTransactions.length > 0">
     <thead>
       <tr>
-        <th>Product Id</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th></th>
+        <th>Transaction Id</th>
+        <th>Vendor Name</th>
+        <th>Product Name</th>
+        <th>Product Quantity</th>
+        <th>Cost</th>
+        <th>Transaction Date</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let supplierProduct of supplierProducts">
-        <td>{{ supplierProduct.id }}</td>
-        <td>{{ supplierProduct.name }}</td>
-        <td>{{ supplierProduct.price }}</td>
+      <tr *ngFor="let vendorTransaction of vendorTransactions">
+        <td>{{ vendorTransaction.id }}</td>
+        <td>{{ vendorTransaction.vendorName }}</td>
+        <td>{{ vendorTransaction.productName }}</td>
+        <td>{{ vendorTransaction.productQuantity }}</td>
+        <td>{{ vendorTransaction.cost }}</td>
         <td>
-          <a [routerLink]="['/supplier-products', 'sell', supplierProduct.id]"
-            >Sell Product</a
-          >
+          {{ vendorTransaction.transactionDate | date : "dd/MM/yyyy HH:mm:ss" }}
         </td>
       </tr>
     </tbody>

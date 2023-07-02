@@ -9,6 +9,8 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuard } from './guards/auth.guard';
+import { SupplierTransactionListComponent } from './components/suppliers/supplier-transaction-list/supplier-transaction-list.component';
+import { VendorTransactionListComponent } from './components/vendors/vendor-transaction-list/vendor-transaction-list.component';
 
 const routes: Routes = [
   {
@@ -46,6 +48,16 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'supplier-transactions/:supplier',
+    component: SupplierTransactionListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'vendor-transactions/:vendor',
+    component: VendorTransactionListComponent,
     canActivate: [AuthGuard],
   },
 ];
