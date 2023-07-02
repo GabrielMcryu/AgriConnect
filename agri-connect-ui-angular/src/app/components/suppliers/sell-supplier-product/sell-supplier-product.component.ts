@@ -4,6 +4,8 @@ import { SupplierProduct } from 'src/app/models/supplier-product.model';
 import { SupplierTransaction } from 'src/app/models/supplier-transaction.model';
 import { SuppliersService } from 'src/app/services/suppliers/suppliers.service';
 import { HttpHeaders } from '@angular/common/http';
+import { AuthService } from 'src/app/services/authentication/auth.service';
+import { UserStoreService } from 'src/app/services/authentication/user-store.service';
 
 @Component({
   selector: 'app-sell-supplier-product',
@@ -11,6 +13,9 @@ import { HttpHeaders } from '@angular/common/http';
   styleUrls: ['./sell-supplier-product.component.css'],
 })
 export class SellSupplierProductComponent implements OnInit {
+  public role!: string;
+  public fullName: string = '';
+
   sellSupplierProductRequest: SupplierTransaction = {
     id: 0,
     supplierName: '',
@@ -29,10 +34,22 @@ export class SellSupplierProductComponent implements OnInit {
   constructor(
     private suppliersService: SuppliersService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private auth: AuthService,
+    private userStore: UserStoreService
   ) {}
 
   ngOnInit(): void {
+    this.userStore.getFullNameFromStore().subscribe((val) => {
+      let fullNameFromToken = this.auth.getFullNameFromToken();
+      this.fullName = val || fullNameFromToken;
+    });
+
+    this.userStore.getRoleFromStore().subscribe((val) => {
+      const roleFromToken = this.auth.getRoleFromToken();
+      this.role = val || roleFromToken;
+    });
+
     this.route.paramMap.subscribe({
       next: (params) => {
         const id = params.get('id');
@@ -53,6 +70,7 @@ export class SellSupplierProductComponent implements OnInit {
     this.sellSupplierProductRequest.cost =
       this.getSupplierProduct.price *
       this.sellSupplierProductRequest.productQuantity;
+    this.sellSupplierProductRequest.supplierName = this.fullName;
 
     const currentDate: Date = new Date();
     const formattedDate: string = currentDate.toISOString();
@@ -70,5 +88,9 @@ export class SellSupplierProductComponent implements OnInit {
       });
 
     this.router.navigate(['supplier-products']);
+  }
+
+  logout() {
+    this.auth.signOut();
   }
 }
