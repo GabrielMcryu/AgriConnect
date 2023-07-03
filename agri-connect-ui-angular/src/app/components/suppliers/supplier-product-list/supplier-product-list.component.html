@@ -43,9 +43,11 @@
   </div>
 </nav>
 
-<p>{{ role }} {{ fullName }}</p>
 <div class="container">
-  <table *ngIf="supplierProducts && supplierProducts.length > 0">
+  <table
+    *ngIf="supplierProducts && supplierProducts.length > 0"
+    class="table table-striped table-hover table-bordered"
+  >
     <thead>
       <tr>
         <th>Product Id</th>

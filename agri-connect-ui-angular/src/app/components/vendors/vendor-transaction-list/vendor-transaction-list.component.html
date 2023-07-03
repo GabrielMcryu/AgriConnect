@@ -45,7 +45,10 @@
 </nav>
 
 <div class="container">
-  <table *ngIf="vendorTransactions && vendorTransactions.length > 0">
+  <table
+    *ngIf="vendorTransactions && vendorTransactions.length > 0"
+    class="table table-striped table-hover table-bordered"
+  >
     <thead>
       <tr>
         <th>Transaction Id</th>
