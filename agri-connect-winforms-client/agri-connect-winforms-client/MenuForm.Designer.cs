@@ -33,6 +33,7 @@ namespace agri_connect_winforms_client
             this.st_button = new System.Windows.Forms.Button();
             this.vp_button = new System.Windows.Forms.Button();
             this.vt_button = new System.Windows.Forms.Button();
+            this.userButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // sp_button
@@ -75,17 +76,30 @@ namespace agri_connect_winforms_client
             this.vt_button.UseVisualStyleBackColor = true;
             this.vt_button.Click += new System.EventHandler(this.vt_button_Click);
             // 
+            // userButton
+            // 
+            this.userButton.Location = new System.Drawing.Point(116, 329);
+            this.userButton.Name = "userButton";
+            this.userButton.Size = new System.Drawing.Size(129, 23);
+            this.userButton.TabIndex = 4;
+            this.userButton.Text = "User";
+            this.userButton.UseVisualStyleBackColor = true;
+            this.userButton.Click += new System.EventHandler(this.userButton_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 417);
+            this.Controls.Add(this.userButton);
             this.Controls.Add(this.vt_button);
             this.Controls.Add(this.vp_button);
             this.Controls.Add(this.st_button);
             this.Controls.Add(this.sp_button);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuForm_FormClosed);
+            this.Shown += new System.EventHandler(this.MenuForm_Shown);
             this.ResumeLayout(false);
 
         }
@@ -96,5 +110,6 @@ namespace agri_connect_winforms_client
         private System.Windows.Forms.Button st_button;
         private System.Windows.Forms.Button vp_button;
         private System.Windows.Forms.Button vt_button;
+        private System.Windows.Forms.Button userButton;
     }
 }

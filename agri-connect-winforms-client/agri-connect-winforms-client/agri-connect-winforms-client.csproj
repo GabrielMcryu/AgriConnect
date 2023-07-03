@@ -70,6 +70,12 @@
     <Compile Include="SupplierTransactionForm.Designer.cs">
       <DependentUpon>SupplierTransactionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="VendorProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierTransactionForm.resx">
       <DependentUpon>SupplierTransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VendorProductForm.resx">
       <DependentUpon>VendorProductForm.cs</DependentUpon>

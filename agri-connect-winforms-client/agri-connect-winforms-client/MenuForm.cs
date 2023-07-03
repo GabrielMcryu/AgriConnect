@@ -15,6 +15,8 @@ namespace agri_connect_winforms_client
         public MenuForm()
         {
             InitializeComponent();
+
+            this.Shown += MenuForm_Shown;
         }
 
         private void sp_button_Click(object sender, EventArgs e)
@@ -39,6 +41,23 @@ namespace agri_connect_winforms_client
         {
             VendorTransactionForm vendorTransactionForm = new VendorTransactionForm();
             vendorTransactionForm.Show();
+        }
+
+        private void userButton_Click(object sender, EventArgs e)
+        {
+            UserForm userForm = new UserForm();
+            userForm.Show();
+            this.Close();
+        }
+
+        private void MenuForm_Shown(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
