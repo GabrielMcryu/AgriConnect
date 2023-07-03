@@ -37,4 +37,13 @@ namespace shared_interfaces
         List<VendorTransactionDto> GetVendorTransactions();
         VendorTransactionDto GetVendorTransaction(int Id);
     }
+
+    public interface IUser
+    {
+        List<UserDto> GetUsers();
+        UserDto GetUserById(int Id);
+        UserDto GetUserByUsername(string username);
+        void UpdateUser(UserDto userDto);
+        void DeleteUser(int Id);
+    }
 }
