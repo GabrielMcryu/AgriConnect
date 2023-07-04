@@ -61,7 +61,13 @@ namespace agri_connect_winforms_client
 
         private void MenuForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+        }
+
+        private void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Loginform loginForm = new Loginform();
+            loginForm.Show();
         }
     }
 }

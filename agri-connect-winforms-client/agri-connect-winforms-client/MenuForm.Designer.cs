@@ -98,6 +98,7 @@ namespace agri_connect_winforms_client
             this.Controls.Add(this.sp_button);
             this.Name = "MenuForm";
             this.Text = "MenuForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuForm_FormClosed);
             this.Shown += new System.EventHandler(this.MenuForm_Shown);
             this.ResumeLayout(false);

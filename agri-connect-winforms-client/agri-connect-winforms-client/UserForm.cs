@@ -115,6 +115,21 @@ namespace agri_connect_winforms_client
             menuForm.Show();
         }
 
-       
+        private void createUserButton_Click(object sender, EventArgs e)
+        {
+            UserDto user = new UserDto();
+
+            user.FirstName = firstNameField.Text;
+            user.LastName = lastNameField.Text;
+            user.Username = usernameField.Text;
+            user.Password = passwordField.Text;
+            user.Email = emailField.Text;
+
+            iUser.CreateUser(user);
+
+            MessageBox.Show("User successfully created");
+
+            ListUsers();
+        }
     }
 }

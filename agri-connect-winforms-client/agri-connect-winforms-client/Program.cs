@@ -16,7 +16,8 @@ namespace agri_connect_winforms_client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuForm());
+            //Application.Run(new MenuForm());
+            Application.Run(new Loginform());
         }
     }
 }

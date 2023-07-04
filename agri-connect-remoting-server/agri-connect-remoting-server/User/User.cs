@@ -7,6 +7,8 @@ using shared_interfaces;
 using System.Data.SqlClient;
 using shared_interfaces.DTO;
 using System.Security.Cryptography;
+using agri_connect_remoting_server.Helper;
+using System.IO;
 
 namespace agri_connect_remoting_server.User
 {
@@ -16,19 +18,41 @@ namespace agri_connect_remoting_server.User
 
         public bool AuthenticateUser(string username, string password)
         {
-            UserDto user = GetUserByUsername(username);
+            UserDto user = GetUserByUserCredentials(username);
 
-            if(user != null)
+            if (user != null && user.Role == "Admin")
             {
-                string hashedPassword = HashPassword(password);
+                string storedHashedPassword = user.Password;
+                string hashedPassword = PasswordHasher.HashPassword(password);
 
-                if(hashedPassword == user.Password)
+                if (hashedPassword == storedHashedPassword)
                 {
                     return true;
                 }
             }
+            
 
             return false;
+        }
+
+        public void CreateUser(UserDto userDto)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Users (FirstName, LastName, Username, Password, Role, Email) " +
+                               "VALUES (@FirstName, @LastName, @Username, @Password, @Role, @Email)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@FirstName", userDto.FirstName);
+                command.Parameters.AddWithValue("@LastName", userDto.LastName);
+                command.Parameters.AddWithValue("@Username", userDto.Username);
+                command.Parameters.AddWithValue("@Password", PasswordHasher.HashPassword(userDto.Password));
+                command.Parameters.AddWithValue("@Role", "Admin");
+                command.Parameters.AddWithValue("@Email", userDto.Email);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
         }
 
         public void DeleteUser(int Id)
@@ -148,6 +172,38 @@ namespace agri_connect_remoting_server.User
             return null;
         }
 
+        public UserDto GetUserByUserCredentials(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE Username = @Username", connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            UserDto user = new UserDto()
+                            {
+                                Username = (string)reader["Username"],
+                                Password = (string)reader["Password"],
+                                Role = (string)reader["Role"],
+                            };
+
+                            return user;
+                        }
+                    }
+                }
+
+                connection.Close();
+            }
+
+            return null;
+        }
+
         public List<UserDto> GetUsers()
         {
             List<UserDto> users = new List<UserDto>();
@@ -203,17 +259,7 @@ namespace agri_connect_remoting_server.User
             }
         }
 
-        public string HashPassword(string password)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
-                byte[] hashedBytes = sha256.ComputeHash(passwordBytes);
-                string hashedPassword = BitConverter.ToString(hashedBytes).Replace("-", "");
-
-                return hashedPassword;
-            }
-        }
+        
     }
 
     

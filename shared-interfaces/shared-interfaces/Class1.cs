@@ -46,5 +46,6 @@ namespace shared_interfaces
         void UpdateUser(UserDto userDto);
         void DeleteUser(int Id);
         bool AuthenticateUser(string username, string password);
+        void CreateUser(UserDto userDto);
     }
 }
