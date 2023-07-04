@@ -41,6 +41,8 @@ namespace agri_connect_winforms_client
         private void SupplierProductForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ChannelServices.UnregisterChannel(channel);
+            MenuForm menuForm = new MenuForm();
+            menuForm.Show();
         }
 
         private void ListSupplierProducts()

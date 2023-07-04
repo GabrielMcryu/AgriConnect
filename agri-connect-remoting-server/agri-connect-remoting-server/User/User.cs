@@ -6,12 +6,30 @@ using System.Threading.Tasks;
 using shared_interfaces;
 using System.Data.SqlClient;
 using shared_interfaces.DTO;
+using System.Security.Cryptography;
 
 namespace agri_connect_remoting_server.User
 {
     class User : MarshalByRefObject, IUser
     {
         public static string connectionString = "Data Source=DESKTOP-UFTA8G9;Initial Catalog=AgriConnect;Integrated Security=True";
+
+        public bool AuthenticateUser(string username, string password)
+        {
+            UserDto user = GetUserByUsername(username);
+
+            if(user != null)
+            {
+                string hashedPassword = HashPassword(password);
+
+                if(hashedPassword == user.Password)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
 
         public void DeleteUser(int Id)
         {
@@ -184,5 +202,19 @@ namespace agri_connect_remoting_server.User
                 connection.Close();
             }
         }
+
+        public string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashedBytes = sha256.ComputeHash(passwordBytes);
+                string hashedPassword = BitConverter.ToString(hashedBytes).Replace("-", "");
+
+                return hashedPassword;
+            }
+        }
     }
+
+    
 }

@@ -89,6 +89,8 @@ namespace agri_connect_winforms_client
         private void SupplierTransactionForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ChannelServices.UnregisterChannel(channel);
+            MenuForm menuForm = new MenuForm();
+            menuForm.Show();
         }
     }
 }

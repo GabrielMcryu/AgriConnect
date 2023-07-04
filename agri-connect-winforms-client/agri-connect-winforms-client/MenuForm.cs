@@ -16,38 +16,42 @@ namespace agri_connect_winforms_client
         {
             InitializeComponent();
 
-            this.Shown += MenuForm_Shown;
+            Shown += MenuForm_Shown;
         }
 
         private void sp_button_Click(object sender, EventArgs e)
         {
             SupplierProductForm supplierProductForm = new SupplierProductForm();
             supplierProductForm.Show();
+            Hide();
         }
 
         private void st_button_Click(object sender, EventArgs e)
         {
             SupplierTransactionForm supplierTransactionForm = new SupplierTransactionForm();
             supplierTransactionForm.Show();
+            Hide();
         }
 
         private void vp_button_Click(object sender, EventArgs e)
         {
             VendorProductForm vendorProductForm = new VendorProductForm();
             vendorProductForm.Show();
+            Hide();
         }
 
         private void vt_button_Click(object sender, EventArgs e)
         {
             VendorTransactionForm vendorTransactionForm = new VendorTransactionForm();
             vendorTransactionForm.Show();
+            Hide();
         }
 
         private void userButton_Click(object sender, EventArgs e)
         {
             UserForm userForm = new UserForm();
             userForm.Show();
-            this.Close();
+            Hide();
         }
 
         private void MenuForm_Shown(object sender, EventArgs e)
