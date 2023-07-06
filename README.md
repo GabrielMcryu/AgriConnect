@@ -2,15 +2,13 @@
 
 Agri Connect is a groundbreaking software project that facilitates direct trade between farmers and our platform, eliminating intermediaries and lowering costs for farmers. By connecting farmers directly with Agri Connect, they can achieve higher profits for their products. Our platform specializes in value-added processing, transforming raw agricultural goods into refined products such as mango juice. These products are then sold to vendors, who can offer them to consumers at affordable prices. Agri Connect revolutionizes the agricultural industry by empowering farmers and creating a transparent marketplace for high-quality agricultural goods.
 
+## Table of Contents
+
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Requirements](#requirements)
+
 ## Technologies Used
-
-Agri Connect is a comprehensive software solution that revolutionizes the agricultural industry. It consists of two main components: an Admin Panel and a Web Application.
-
-The Admin Panel, built using .NET Remoting and WinForms, serves as the control center for the application. Administrators can log in securely and access a range of features. They have complete control over the system, allowing them to manage and manipulate data. This includes adding, deleting, updating, and viewing products for both vendors and suppliers. The Admin Panel also provides a transaction log, enabling administrators to track all transactions made by vendors and suppliers.
-
-The Web Application, developed with .NET Web API and Angular, offers a user-friendly interface for suppliers and vendors. Users can register on the platform, specifying their role as either a supplier or a vendor. Once logged in, they are directed to their respective dashboards. Suppliers can list and sell their products, while vendors can browse and purchase products from the available listings. Additionally, users can view their transaction history, providing transparency and accountability.
-
-By utilizing technologies such as .NET Remoting, Microsoft SQL Server, WinForms, .NET Web API, and Angular, Agri Connect provides a seamless and efficient experience for all stakeholders involved in the agricultural value chain. Whether it's the admin managing the system or suppliers and vendors conducting transactions, Agri Connect empowers users with the tools they need to thrive in the agricultural marketplace.
 
 - Languages & IDEs
 
@@ -36,12 +34,13 @@ By utilizing technologies such as .NET Remoting, Microsoft SQL Server, WinForms,
 
 ## Features
 
-- Account Creation by Role
-- Login and Logout Feature
-- Admin Panel
-- Sell products for Suppliers
-- Buy products for Vendors
-- View Transactions by Account
+Agri Connect is a revolutionary software solution that transforms the agricultural industry. It comprises two main components: an Admin Panel and a Web Application.
+
+The Admin Panel, powered by .NET Remoting and WinForms, acts as the centralized control center for the application. Administrators can securely log in and access a comprehensive range of features. With complete control over the system, administrators can effectively manage and manipulate data. This includes the ability to add, delete, update, and view products for both vendors and suppliers. The Admin Panel also provides a transaction log, allowing administrators to track all transactions conducted by vendors and suppliers. Furthermore, administrators can create new administrator accounts, granting them appropriate access and privileges to manage the system effectively.
+
+The Web Application, built using .NET Web API and Angular, offers an intuitive and user-friendly interface for suppliers and vendors. Users can effortlessly register on the platform, specifying their role as either a supplier or a vendor. Once logged in, they are seamlessly directed to personalized dashboards tailored to their specific roles. Suppliers can conveniently list and sell their products, while vendors can browse and purchase items from the available listings. Additionally, users have access to their transaction history, ensuring transparency and fostering accountability.
+
+By leveraging cutting-edge technologies such as .NET Remoting, Microsoft SQL Server, WinForms, .NET Web API, and Angular, Agri Connect provides a seamless and efficient experience for all stakeholders involved in the agricultural value chain. Whether it's the admin effectively managing the system, creating new administrator accounts, viewing user details, suppliers listing and selling their products, or vendors making purchases, Agri Connect empowers users with the essential tools needed to thrive in the dynamic agricultural marketplace.
 
 # Requirements
 
